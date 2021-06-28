@@ -5,7 +5,7 @@ towards creating sets of common icons pack for Vue 3.
 
 Packages:
 
-- [`@vue-icons/feather`](https://npmjs.com/package/@vue-icons/feather)
+- [`@vue-icons/feather` ![](https://img.shields.io/npm/v/@vue-icons/feather)](https://npmjs.com/package/@vue-icons/feather)
 - TBD: [`@vue-icons/simple-icons`](https://npmjs.com/package/@vue-icons/simple-icons)
 
 ## Install
