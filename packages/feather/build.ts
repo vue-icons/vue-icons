@@ -48,10 +48,26 @@ const main = async () => {
       name: upperFirst(camelCase(`${slug.replace(/-(\d+)/, "$1")}-icon`))
     }
 
+    // Cleanup icon attributes
+    const dirty = feather.icons[icon.slug]
+    const { attrs } = dirty
+
+    delete attrs["width"]
+    delete attrs["height"]
+
+    const data = {
+      name: dirty.name,
+      tags: dirty.tags,
+      attrs: {
+        ...attrs,
+        innerHTML: dirty.contents
+      }
+    }
+
     index.push(`export { default as ${icon.name} } from "./${icon.name}"`)
     types.push(`export const ${icon.name}: Icon`)
 
-    const blob = templates.icon(icon.name, feather.icons[icon.slug])
+    const blob = templates.icon(icon.name, data)
     const path = join(output, `${icon.name}.js`)
 
     await fs.ensureDir(dirname(path))
