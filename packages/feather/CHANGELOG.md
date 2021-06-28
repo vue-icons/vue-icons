@@ -1,5 +1,11 @@
 # @vue-icons/feather
 
+## 1.0.18
+
+### Patch Changes
+
+- 748a180: Preprocess dirty icon attrs and cleanup
+
 ## 1.0.17
 
 ### Patch Changes
