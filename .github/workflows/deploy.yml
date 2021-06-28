@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Build packages
+        run: |
+          yarn
+          yarn build
+
+      - name: Checkout vue-icons.github.io
+        uses: actions/checkout@v2
+        with:
+          repository: vue-icons/vue-icons.github.io
+          path: app/dist
+          ssh-key: ${{ secrets.PAGE_SSH_KEY }}
+
+      - name: Build app
+        run: |
+          cd app
+          yarn
+          yarn build
+
+      - name: Deploy app
+        run: |
+          cd app/dist
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -m "deploy $GITHUB_SHA"
+          git push
