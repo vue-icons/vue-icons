@@ -22,6 +22,7 @@ jobs:
         with:
           title: "chore: release packages"
           commit: "chore: release packages"
+          publish: bash publish.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
