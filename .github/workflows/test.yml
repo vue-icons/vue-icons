@@ -25,4 +25,3 @@ jobs:
 
       - run: yarn
       - run: yarn lint
-      - run: yarn changeset status
