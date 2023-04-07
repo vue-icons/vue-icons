@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/lib/esm",
+    "module": "es2015",
+    "target": "es5",
+    "lib": ["es2017", "dom"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "declaration": true,
+    "strict": true,
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*.tsx", "src/index.ts", "src/index.ts", "src/iconContext.ts", "src/iconContext.ts", "src/iconBase.ts", "src/iconBase.ts"],
+  "exclude": ["icons"]
+}

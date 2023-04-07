@@ -1,0 +1,6 @@
+node_modules
+./packages/vue-icons/icons
+./packages/_react-icons_all
+!./packages/_react-icons_all/packages.json
+./packages/_react-icons_all-files
+!./packages/_react-icons_all-files/packages.json

@@ -1,0 +1,12 @@
+{
+  "name": "@react-icons/all-files",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "3.x"
+  }
+}
