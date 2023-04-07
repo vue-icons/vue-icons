@@ -1,34 +1,37 @@
-import { ALL_ICONS } from "@utils/icon";
-import { Context } from "@utils/search-context";
-import React from "react";
+import { ALL_ICONS } from '@/utils/icon'
+import { Context } from '@/utils/search-context'
 
-import SearchIconSet from "./search-iconset";
+import SearchIconSet from './search-iconset'
+import { inject, defineComponent } from 'vue'
 
-export default function SearchPageComponent() {
-  const allIcons = ALL_ICONS;
+export default defineComponent({
+  name: 'SearchPageComponent',
+  render() {
+    const allIcons = ALL_ICONS
 
-  const { query } = React.useContext(Context);
+    const { query } = inject(Context)!
 
-  if (query.length > 2) {
-    const hightlightPattern = new RegExp(`(${query})`, "i");
-    return (
-      <>
-        <h2>
-          Results for: <i>{query}</i>
-        </h2>
-        <div className="icons">
-          {allIcons.map((icon) => (
-            <SearchIconSet
-              key={icon.id}
-              icon={icon}
-              query={query}
-              highlightPattern={hightlightPattern}
-            />
-          ))}
-        </div>
-        <h3 className="no-results" />
-      </>
-    );
+    if (query.value.length > 2) {
+      const hightlightPattern = new RegExp(`(${query.value})`, 'i')
+      return (
+        <>
+          <h2>
+            Results for: <i>{query}</i>
+          </h2>
+          <div className="icons">
+            {allIcons.map((icon: any) => (
+              <SearchIconSet
+                key={icon.id}
+                icon={icon}
+                query={query}
+                highlightPattern={hightlightPattern}
+              />
+            ))}
+          </div>
+          <h3 className="no-results" />
+        </>
+      )
+    }
+    return <h2>Please enter at least 3 characters to search...</h2>
   }
-  return <h2>Please enter at least 3 characters to search...</h2>;
-}
+})
