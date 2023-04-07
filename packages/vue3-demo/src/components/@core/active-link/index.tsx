@@ -4,7 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 const ActiveLink = defineComponent({
   name: 'ActiveLink',
   props: {
-    href: String,
+    href: Object,
     activeClassName: {
       type: String,
       default: 'active'
@@ -16,13 +16,13 @@ const ActiveLink = defineComponent({
     const className = ref('')
 
     watch(route, () => {
-      if (route.path === props.href && props.activeClassName) {
+      if (route.path === props.href?.path && props.activeClassName) {
         className.value = props.activeClassName
       }
     })
 
     return () => (
-      <RouterLink to={{ path: props.href || '/' }}>
+      <RouterLink to={props.href || { to: '/' }}>
         {slots.default?.({ class: className.value })}
       </RouterLink>
     )

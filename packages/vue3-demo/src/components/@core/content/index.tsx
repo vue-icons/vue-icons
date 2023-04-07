@@ -1,5 +1,8 @@
-import React from "react";
+import { defineComponent } from 'vue'
 
-export default function Container({ children }) {
-  return <main className="container">{children}</main>;
-}
+export default defineComponent({
+  name: 'ContentEl',
+  setup(props, { slots }) {
+    return () => <main class="container">{slots.default?.()}</main>
+  }
+})

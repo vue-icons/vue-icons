@@ -1,29 +1,36 @@
-import toast from "cogo-toast";
-import copy from "copy-to-clipboard";
-import React from "react";
+import copy from 'copy-to-clipboard'
+import { defineComponent } from 'vue'
+import { toast } from 'vue3-toastify'
 
-function Icon({ icon, name, highlightPattern = null }) {
-  const copyToClipboard = () => {
-    copy(name);
-    toast.success(`Copied '${name}' to clipboard`, {
-      position: "bottom-center",
-    });
-  };
+const Icon = defineComponent({
+  props: {
+    icon: [Function, String],
+    name: String,
+    highlightPattern: String
+  },
+  setup(props) {
+    const copyToClipboard = () => {
+      copy(props.name || '')
+      toast.success(`Copied '${props.name}' to clipboard`, {
+        position: 'bottom-center'
+      })
+    }
 
-  const highlightedName = () => {
-    if (highlightPattern)
-      return name
-        .split(highlightPattern)
-        .map((part) => (part.match(highlightPattern) ? <b>{part}</b> : part));
-    return name;
-  };
+    const highlightedName = () => {
+      if (props.highlightPattern)
+        return props
+          .name!.split(props.highlightPattern)
+          .map((part) => (part.match(props.highlightPattern!) ? <b>{part}</b> : part))
+      return props.name
+    }
 
-  return (
-    <div className="item" tabIndex={0} onClick={copyToClipboard} key={name}>
-      <div className="icon h2">{typeof icon === "function" && icon()}</div>
-      <div className="name">{highlightedName()}</div>
-    </div>
-  );
-}
+    return (
+      <div class="item" tabIndex={0} onClick={copyToClipboard} key={props.name}>
+        <div class="icon h2">{typeof props.icon === 'function' && props.icon?.()}</div>
+        <div class="name">{highlightedName()}</div>
+      </div>
+    )
+  }
+})
 
-export default Icon;
+export default Icon

@@ -1,34 +1,41 @@
-import { BRAND_TITLE_MONO } from "@utils/constants";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import { BRAND_TITLE_MONO } from '@/utils/constants'
 
-import ActiveLink from "../active-link";
-import BrandIcon from "./icon";
+import ActiveLink from '../active-link'
+import BrandIcon from './icon'
+import { watch, defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
 
-export default function Heading({ isOpen, setIsOpen }) {
-  const router = useRouter();
+export default defineComponent({
+  name: 'HeadingEl',
+  props: {
+    isOpen: Boolean
+  },
+  emits: ['update:isOpen'],
+  setup(props, { emit }) {
+    const route = useRoute()
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    const toggleMenu = () => {
+      emit('update:isOpen', !props.isOpen)
+    }
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [router]);
+    watch(route, () => {
+      emit('update:isOpen', false)
+    })
 
-  return (
-    <div className="brand">
-      <ActiveLink href="/">
-        <a>
-          <BrandIcon />
-          <span>{BRAND_TITLE_MONO}</span>
-        </a>
-      </ActiveLink>
-      <div className="brand--navmenu">
-        <button className={`menu ${isOpen && "active"}`} onClick={toggleMenu}>
-          <div>Menu</div>
-        </button>
+    return () => (
+      <div class="brand">
+        <ActiveLink href="/">
+          <a>
+            <BrandIcon />
+            <span>{BRAND_TITLE_MONO}</span>
+          </a>
+        </ActiveLink>
+        <div className="brand--navmenu">
+          <button className={`menu ${props.isOpen && 'active'}`} onClick={toggleMenu}>
+            <div>Menu</div>
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
+    )
+  }
+})
