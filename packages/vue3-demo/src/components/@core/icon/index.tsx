@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import { toast } from 'vue3-toastify'
 
 const Icon = defineComponent({
+  name: 'IconEl',
   props: {
     icon: [Function, String],
     name: String,
@@ -24,7 +25,7 @@ const Icon = defineComponent({
       return props.name
     }
 
-    return (
+    return () => (
       <div class="item" tabIndex={0} onClick={copyToClipboard} key={props.name}>
         <div class="icon h2">{typeof props.icon === 'function' && props.icon?.()}</div>
         <div class="name">{highlightedName()}</div>

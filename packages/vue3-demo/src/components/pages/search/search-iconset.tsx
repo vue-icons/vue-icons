@@ -1,6 +1,4 @@
 import Icon from '@/components/@core/icon'
-import loadable from '@/loadable/component'
-import React from 'react'
 import { getIcons } from '@/utils/getIcons'
 import { defineComponent, h } from 'vue'
 
@@ -32,6 +30,6 @@ export default defineComponent({
 
     const IconSet = () => h(getIcons(this.icon?.id || ''))
 
-    return <IconSet>{child()}</IconSet>
+    return <IconSet>{child(this.icon)}</IconSet>
   }
 })

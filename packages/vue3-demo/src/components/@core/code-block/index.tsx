@@ -1,12 +1,9 @@
 import copy from 'copy-to-clipboard'
-// @ts-ignore
-import Vue3Prism from 'vue3-prism/lib/Vue3Prism.common.js'
-import 'vue3-prism/lib/Vue3Prism.css'
 import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 
-import React from 'react'
-import { IoMdClipboard } from 'react-icons/io'
+// import { HiOutlineClipboard } from 'vue-icons/hi'
+
 import { defineComponent } from 'vue'
 
 export const CodeBlock = defineComponent({
@@ -22,11 +19,9 @@ export const CodeBlock = defineComponent({
     }
 
     return () => (
-      <Vue3Prism
-        source={props.code!.trim()}
-        language={props.language}
-        onClick={copyToClipboard}
-      ></Vue3Prism>
+      <pre>
+        <code>{props.code!.trim()}</code>
+      </pre>
     )
   }
 })

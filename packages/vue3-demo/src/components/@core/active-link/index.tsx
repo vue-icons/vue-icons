@@ -22,7 +22,7 @@ const ActiveLink = defineComponent({
     })
 
     return () => (
-      <RouterLink to={props.href || { to: '/' }}>
+      <RouterLink tag="a" to={props.href || { to: '/' }}>
         {slots.default?.({ class: className.value })}
       </RouterLink>
     )

@@ -38,10 +38,12 @@ async function main() {
 
   const queue = new PQueue({ concurrency: 10 });
   const sucessString = fs.readFileSync(sucessRepo).toString()
-  const sucesses = sucessString.split('\n')
+  const sucesses = sucessString.split('\r\n')
   const length = Object.keys(icons).length
   let _index = 0
+  console.log(sucesses)
   for (const icon of icons) {
+    console.log(icon.name, icon.source?.localName)
     if (sucesses.includes(icon.source?.localName || '')) {
       console.log(`第${_index}个已经下载成功,跳过,总个数${length}`);
       _index++

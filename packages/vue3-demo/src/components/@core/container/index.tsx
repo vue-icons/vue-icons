@@ -1,4 +1,3 @@
-import React from 'react'
 import { defineComponent } from 'vue'
 
 export const Container = defineComponent({
@@ -15,3 +14,5 @@ export const Container = defineComponent({
     )
   }
 })
+
+export default Container

@@ -3,6 +3,7 @@
   "exclude": [],
   "compilerOptions": {
     "composite": true,
+    "jsx": "preserve",
     "lib": [],
     "types": ["node", "jsdom"]
   }

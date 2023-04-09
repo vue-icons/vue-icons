@@ -24,7 +24,7 @@ export default defineComponent({
 
     return () => (
       <div class="brand">
-        <ActiveLink href="/">
+        <ActiveLink href={{ path: '/' }}>
           <a>
             <BrandIcon />
             <span>{BRAND_TITLE_MONO}</span>
