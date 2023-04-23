@@ -1,5 +1,5 @@
 node_modules
-packages/vue-icons/icons
+packages/vue-icons/icons*
 packages/_vue-icons_all
 packages/_vue-icons_all-files
 dist

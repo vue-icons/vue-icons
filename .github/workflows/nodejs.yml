@@ -7,11 +7,6 @@ on:
     branches:
       - main
 
-# 默认shell
-defaults:
-  run:
-    shell: bash
-
 # 任务
 jobs:
   changelog:
@@ -19,6 +14,9 @@ jobs:
     # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
     if: ${{ github.repository_owner == 'vue-icons' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
     steps:
       - uses: actions/checkout@v3
       # 设置 pnpm。指定版本7.0，不然会报错
@@ -28,9 +26,10 @@ jobs:
           version: ^8.0
 
       # 设置 Node
-      - name: Setup Node
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
+          node-version: ${{ matrix.node-version }}
           node-version: 16
           cache: 'pnpm'
       # 安装依赖

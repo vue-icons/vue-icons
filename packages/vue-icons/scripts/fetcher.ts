@@ -76,7 +76,8 @@ async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
     }
   ).catch((e) => {
     console.log(`git clone faild ${source.index}个，${source.localName}\n\n${e}`)
-    throw new Error(JSON.stringify({ source, ctx }));
+    console.error(e)
+    throw { source, ctx };
   });
 
   await execFile(
@@ -87,6 +88,7 @@ async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
     }
   ).catch((e) => {
     console.log(`git checkout faild ${source.index}个，${source.localName}\n\n${e}`)
+    console.error(e)
 
     throw { source, ctx };
   });;
@@ -95,8 +97,9 @@ async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
     cwd: ctx.iconDir(source.localName),
   }).catch((e) => {
     console.log(`git checkout hash faild ${source.index}个，${source.localName}\n${source.hash}\n\n${e}`)
+    console.error(e)
     throw { source, ctx };
-  });;
+  });
   console.log(`第${source.index}个已经成功，总个数${source.totalRepo}`)
   fs.appendFileSync(sucessRepo, `${source.localName}
 `)
