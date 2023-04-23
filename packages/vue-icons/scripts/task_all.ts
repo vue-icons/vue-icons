@@ -25,15 +25,15 @@ export async function dirInit({ DIST, LIB, rootDir }) {
   const initFiles = ["index.d.ts", "index.esm.js", "index.js"];
 
   for (const icon of icons) {
-    const files = (
-      await Promise.all(icon.contents.map((content) => getIconFiles(content)))
-    ).flat();
+    // const files = (
+    //   await Promise.all(icon.contents.map((content) => getIconFiles(content)))
+    // ).flat();
 
-    if (files.length === 0) {
-      console.log(`${icon.name}没有拉取，不创建文件夹，跳过`);
-      continue;
-      //throw new Error(`Missing path for: ${icon.name}`);
-    }
+    // if (files.length === 0) {
+    //   console.log(`${icon.name}没有拉取，不创建文件夹，跳过`);
+    //   continue;
+    //   //throw new Error(`Missing path for: ${icon.name}`);
+    // }
     await fs.mkdir(path.resolve(DIST, icon.id)).catch(ignore);
 
     await write(

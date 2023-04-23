@@ -99,9 +99,9 @@ export async function writeIconVersions({ DIST, LIB, rootDir }) {
     ).flat();
 
     if (files.length === 0) {
-      console.log(`${icon.name}没有拉取，跳过`);
-      continue;
-      //throw new Error(`Missing path for: ${icon.name}`);
+      // console.log(`${icon.name}没有拉取，跳过`);
+      // continue;
+      throw new Error(`Missing path for: ${icon.name}`);
     }
 
     const firstDir = path.dirname(files[0]);

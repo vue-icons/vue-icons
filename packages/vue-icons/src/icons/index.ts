@@ -80,7 +80,7 @@ export const icons: IconDefinition[] = [
       {
         files: path.resolve(
           __dirname,
-          "../../../../node_modules/ionicons-5/dist/svg/*.svg"
+          "../../node_modules/ionicons-5/dist/svg/*.svg"
         ),
         formatter: (name) => `Io${name}`,
         processWithSVGO: true,
