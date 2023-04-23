@@ -12,7 +12,7 @@ Include popular icons in your React projects easily with `react-icons`, which ut
 ## Installation (for standard modern project)
 
 ```bash
-yarn add react-icons
+yarn add react-icons 
 # or
 npm install react-icons --save
 ```
