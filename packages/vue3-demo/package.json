@@ -18,7 +18,7 @@
     "pinia": "^2.0.32",
     "prismjs": "^1.29.0",
     "vue": "^3.2.47",
-    "vue-icons": "workspace:*",
+    "vue3-icons": "workspace:*",
     "vue-router": "^4.1.6",
     "vue3-prism": "^0.1.4",
     "vue3-toastify": "^0.1.6"

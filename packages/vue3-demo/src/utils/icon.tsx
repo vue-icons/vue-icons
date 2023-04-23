@@ -1,4 +1,4 @@
-import * as RiLib from 'vue-icons/lib'
+import * as RiLib from 'vue3-icons/lib'
 
 export const ALL_ICONS = RiLib['IconsManifest']
 
