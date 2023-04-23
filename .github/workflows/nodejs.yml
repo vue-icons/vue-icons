@@ -39,7 +39,7 @@ jobs:
         run: BASE_PATH=/vue-icons ./build-script.sh
       - uses: actions/upload-artifact@v3
         with:
-          path: packages/_react-icons_*/*.tgz
+          path: packages/_vue-icons_*/*.tgz
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       #- name: Create Release Pull Request or Publish
       #  id: changesets
