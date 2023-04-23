@@ -2,7 +2,7 @@ import Icon from '@/components/@core/icon'
 import { getIcons } from '@/utils/getIcons'
 //import IconsPageLoading from './loading'
 import { defineComponent, h, ref } from 'vue'
-import type { IconType } from 'vue-icons/lib'
+import type { IconType } from 'vue3-icons/lib'
 
 export const IconSetViewer = defineComponent({
   name: 'IconSetViewer',

@@ -10,5 +10,5 @@ export function getIcons(iconsId: string) {
   ```
   */
   /* @vite-ignore */
-  return import(`/node_modules/vue-icons/${iconsId}/index.esm.js`);
+  return import(`/node_modules/vue3-icons/${iconsId}/index.esm.js`);
 }

@@ -2,7 +2,7 @@
 import Icon from '@/components/@core/icon'
 import { getIcons } from '@/utils/getIcons'
 import { onBeforeMount, ref, watch } from 'vue'
-import type { IconType } from 'vue-icons/lib'
+import type { IconType } from 'vue3-icons/lib'
 
 const props = defineProps({
   icon: Object

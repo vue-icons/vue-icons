@@ -2,7 +2,7 @@ import copy from 'copy-to-clipboard'
 import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 
-// import { HiOutlineClipboard } from 'vue-icons/hi'
+// import { HiOutlineClipboard } from 'vue3-icons/hi'
 
 import { defineComponent } from 'vue'
 

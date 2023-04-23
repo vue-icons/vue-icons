@@ -11,18 +11,6 @@ importers:
         specifier: ^0.16.3
         version: 0.16.3
 
-  packages/_react-icons_all:
-    dependencies:
-      vue:
-        specifier: 3.x
-        version: 3.2.47
-
-  packages/_react-icons_all-files:
-    dependencies:
-      vue:
-        specifier: 3.x
-        version: 3.2.47
-
   packages/_vue-icons_all:
     dependencies:
       vue:
