@@ -23,8 +23,8 @@ export default defineComponent({
               <SearchIconSet
                 key={icon.id}
                 icon={icon}
-                query={query}
-                highlightPattern={hightlightPattern}
+                query={query.value}
+                highlightPattern={hightlightPattern.toString()}
               />
             ))}
           </div>

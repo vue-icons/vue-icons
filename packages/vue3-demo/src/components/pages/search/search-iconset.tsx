@@ -9,11 +9,14 @@ export default defineComponent({
   props: {
     icon: Object,
     name: String,
-    highlightPattern: String
+    highlightPattern: String,
+    query: String
   },
   render() {
     const child = (icons: any) => {
-      const found = Object.keys(icons).filter((name) => name.toLowerCase().includes(query))
+      const found = Object.keys(icons).filter((name) =>
+        name.toLowerCase().includes(this.query || '')
+      )
       return (
         <>
           {found.map((name) => (

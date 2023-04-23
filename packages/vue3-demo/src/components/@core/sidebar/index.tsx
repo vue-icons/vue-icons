@@ -24,7 +24,7 @@ export default defineComponent({
       inputQuery.value = query // State for this component
     }
 
-    const onSearch = (e) => {
+    const onSearch = (e: any) => {
       const query = e.target.value.toLowerCase()
       router.push({ path: searchPath, query: query ? { q: query } : undefined })
       setQueryEveywhere(query)
@@ -55,10 +55,10 @@ export default defineComponent({
             onBlur={onBlur}
             onChange={onSearch}
             value={inputQuery.value !== null ? inputQuery.value : query.value}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
           />
         </div>
 
