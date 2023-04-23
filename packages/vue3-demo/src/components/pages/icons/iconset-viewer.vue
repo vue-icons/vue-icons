@@ -11,6 +11,7 @@ const props = defineProps({
 const icons = ref<{ [key in string]: IconType }>({})
 
 function getIconHandle() {
+  console.log(getIcons(props.icon?.id)(), '++++++====')
   getIcons(props.icon?.id).then((res: any) => {
     console.log(res)
     icons.value = res
