@@ -1,4 +1,6 @@
 node_modules
 packages/vue-icons/icons
-packages/_react-icons_all
-packages/_react-icons_all-files
+packages/_vue-icons_all
+packages/_vue-icons_all-files
+dist
+packages/**/dist/*

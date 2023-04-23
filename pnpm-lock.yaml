@@ -23,6 +23,18 @@ importers:
         specifier: 3.x
         version: 3.2.47
 
+  packages/_vue-icons_all:
+    dependencies:
+      vue:
+        specifier: 3.x
+        version: 3.2.47
+
+  packages/_vue-icons_all-files:
+    dependencies:
+      vue:
+        specifier: 3.x
+        version: 3.2.47
+
   packages/vue-icons:
     dependencies:
       vue:
@@ -82,7 +94,7 @@ importers:
         version: 4.1.6(vue@3.2.47)
       vue3-icons:
         specifier: workspace:*
-        version: link:../_react-icons_all
+        version: link:../_vue-icons_all
       vue3-prism:
         specifier: ^0.1.4
         version: 0.1.4
