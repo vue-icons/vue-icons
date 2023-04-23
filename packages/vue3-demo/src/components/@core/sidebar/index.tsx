@@ -42,14 +42,14 @@ export default defineComponent({
     }
 
     return () => (
-      <div className="sidebar pt3">
+      <div class="sidebar pt3">
         <Heading v-model={[isOpen.value, 'isOpen']} />
 
-        <div className="search p2">
+        <div class="search p2">
           <input
             type="text"
             aria-label="search"
-            className="px2 py1"
+            class="px2 py1"
             placeholder="🔍 Search Icons"
             onFocus={goToSearch}
             onBlur={onBlur}
@@ -62,16 +62,16 @@ export default defineComponent({
           />
         </div>
 
-        <ul className={`sidebar--links ${isOpen.value && 'active'}`}>
+        <ul class={`sidebar--links ${isOpen.value && 'active'}`}>
           <li>
             <ActiveLink href={{ path: '/' }}>
-              <a className="rounded px2 py1">Home</a>
+              <a class="rounded px2 py1">Home</a>
             </ActiveLink>
           </li>
           {iconsList.map((icon: any) => (
             <li key={icon.id}>
               <ActiveLink href={{ path: 'icons', query: { name: icon.id } }}>
-                <a className="rounded px2 py1" onClick={() => setQueryEveywhere('')}>
+                <a class="rounded px2 py1" onClick={() => setQueryEveywhere('')}>
                   {icon.name}
                 </a>
               </ActiveLink>

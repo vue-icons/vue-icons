@@ -1,6 +1,7 @@
 {
   "name": "@vue-icons/vue-icons",
   "version": "0.0.1",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {

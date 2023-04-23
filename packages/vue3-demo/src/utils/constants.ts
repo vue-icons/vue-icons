@@ -1,23 +1,23 @@
-export const BRAND_TITLE = "React Icons";
-export const BRAND_TITLE_MONO = "react-icons";
+export const BRAND_TITLE = "Vue3 Icons";
+export const BRAND_TITLE_MONO = "vue3-icons";
 export const BRAND_DESCRIPTION =
-  "Include popular icons in your React projects easly with react-icons.";
-export const BRAND_KEYWORDS = "React, Icons, Tree Shaking, SVG";
+  "Include popular icons in your Vue3 projects easly with vue3-icons.";
+export const BRAND_KEYWORDS = "Vue3, Icons, Tree Shaking, SVG";
 
 export const HOME_USAGE = `
-import { FaBeer } from 'react-icons/fa';
-
-class Question extends React.Component {
-  render() {
-    return <h3> Lets go for a <FaBeer />? </h3>
-  }
-}`;
+<script lang='ts' setup>
+import { FaBeer } from 'vue3-icons/fa';
+</script>
+<template>
+<FaBeer />
+</template>
+`;
 
 export const HOME_USAGE_ALL = `
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
-
-class Question extends React.Component {
-  render() {
-    return <h3> Lets go for a <FaBeer />? </h3>
-  }
-}`;
+<script lang='ts' setup>
+import { FaBeer } from "@vue3-icons/all-files/fa/FaBeer";
+</script>
+<template>
+<FaBeer />
+</template>
+`;

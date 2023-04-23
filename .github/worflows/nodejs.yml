@@ -1,0 +1,72 @@
+# 流程名称
+name: Deploy & Release
+
+# 触发时机
+on:
+  push:
+    branches:
+      - main
+
+# 默认shell
+defaults:
+  run:
+    shell: bash
+
+# 任务
+jobs:
+  changelog:
+    name: Changelog PR or Release
+    # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
+    if: ${{ github.repository_owner == 'vue-icons' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # 设置 pnpm。指定版本7.0，不然会报错
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: ^8.0
+
+      # 设置 Node
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+      # 安装依赖
+      - name: Install dependencies
+        run: pnpm install
+      # 打包
+      - name: Build Packages
+        run: BASE_PATH=/vue-icons ./build-script.sh
+      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # 执行更新版本和发布的命令
+          version: pnpm run version
+          publish: pnpm exec changeset publish
+          commit: '[ci] release'
+          title: '[ci] release'
+        env:
+          # 这里需要几个 Token 变量
+          # GITHUB_TOKEN 是 CI 里自带的默认 token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN 需要稍后在 npm 网站生成。
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/preview/out
+        if: github.ref == 'refs/heads/main'
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "packages/_vue-icons_*/*.tgz"
+          bodyFile: "packages/vue-icons/VERSIONS"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: ${{ contains(github.ref, 'snapshot') }}
+        if: contains(github.ref, 'tags/')
+

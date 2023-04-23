@@ -18,7 +18,7 @@ export default defineComponent({
           <h2>
             Results for: <i>{query}</i>
           </h2>
-          <div className="icons">
+          <div class="icons">
             {allIcons.map((icon: any) => (
               <SearchIconSet
                 key={icon.id}
@@ -28,7 +28,7 @@ export default defineComponent({
               />
             ))}
           </div>
-          <h3 className="no-results" />
+          <h3 class="no-results" />
         </>
       )
     }

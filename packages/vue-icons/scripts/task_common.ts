@@ -108,7 +108,7 @@ export async function writeIconVersions({ DIST, LIB, rootDir }) {
     const packageJson = findPackage(firstDir, true);
 
     let version: string;
-    if (packageJson.version && !packageJson.name.includes("react-icons")) {
+    if (packageJson.version && !packageJson.name.includes("vue3-icons")) {
       version = packageJson.version;
     } else {
       const { stdout } = await exec(

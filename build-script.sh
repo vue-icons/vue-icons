@@ -1,12 +1,9 @@
 #!/bin/bash -eux
 
-time (cd packages/react-icons/ && yarn fetch)
-time (cd packages/react-icons/ && yarn build)
-echo VERSIONS; cat packages/react-icons/VERSIONS
-(cd packages/_react-icons_all/ && npm pack |& tail)
-(cd packages/_react-icons_all-files/ && npm pack |& tail)
+time (cd packages/vue-icons/ && pnpm fetch)
+time (cd packages/vue-icons/ && pnpm build)
+echo VERSIONS; cat packages/vue-icons/VERSIONS
+(cd packages/_vue-icons_all/ && npm pack |& tail)
+(cd packages/_vue-icons_all-files/ && pnpm pack |& tail)
 
-(cd packages/preview/ && yarn build)
-(cd packages/demo/ && CI=true yarn test && yarn build)
-(cd packages/webpack4-test/ && CI=true yarn test)
-(cd packages/ts-test/ && SKIP_PREFLIGHT_CHECK=true yarn build)
+(cd packages/vue3-demo/ && pnpm build)

@@ -30,8 +30,8 @@ export default defineComponent({
             <span>{BRAND_TITLE_MONO}</span>
           </a>
         </ActiveLink>
-        <div className="brand--navmenu">
-          <button className={`menu ${props.isOpen && 'active'}`} onClick={toggleMenu}>
+        <div class="brand--navmenu">
+          <button class={`menu ${props.isOpen && 'active'}`} onClick={toggleMenu}>
             <div>Menu</div>
           </button>
         </div>

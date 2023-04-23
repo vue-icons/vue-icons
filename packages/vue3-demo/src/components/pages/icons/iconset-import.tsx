@@ -1,5 +1,5 @@
 import CodeBlock from '@/components/@core/code-block'
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'IconSetImport',
@@ -7,12 +7,13 @@ export default defineComponent({
     iconId: String
   },
   setup(props) {
-    const importCode = `import { IconName } from "react-icons/${props.iconId}";`
+    const importCode = computed(() => `import { IconName } from "vue3-icons/${props.iconId}";`)
 
+    console.log('🚀 ~ file: iconset-import.tsx:12 ~ setup ~ importCode:', importCode)
     return () => (
       <>
         <h2>Import</h2>
-        <CodeBlock language="jsx" code={importCode} />
+        <CodeBlock language="jsx" code={importCode.value} />
       </>
     )
   }
