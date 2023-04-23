@@ -55,7 +55,7 @@ jobs:
           # GITHUB_TOKEN 是 CI 里自带的默认 token
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
-      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
