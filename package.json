@@ -7,13 +7,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "changeset": "changeset",
-    "version": "changeset version && pnpm install"
+    "version": "changeset version && pnpm install",
+    "release:bump": "bumpp packages/_vue-icons_all/package.json  packages/_vue-icons_all/-files/package.json --execute=\"pnpm standard-version --skip.bump --skip.commit --skip.tag && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@types/node": "^18.15.11",
-    "esno": "^0.16.3"
+    "bumpp": "^9.1.0",
+    "esno": "^0.16.3",
+    "standard-version": "^9.5.0"
   }
 }
