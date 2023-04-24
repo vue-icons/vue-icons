@@ -62,8 +62,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./packages/vue3-demo/dist
         if: github.ref == 'refs/heads/main'
-      - name: bump
-        run: pnpm release:bump
       - name: publish 
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} 
