@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release:bump": "bumpp patch packages/_vue-icons_all/package.json  packages/_vue-icons_all/-files/package.json --execute=\"pnpm standard-version --skip.bump --skip.commit --skip.tag -y && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
-    "pubnpm": "pnpm publish --no-git-checks --access public --filter packages/_vue-icons_all --registry https://registry.npmjs.org/"
+    "pubnpm": "pnpm publish --no-git-checks --access public --filter \"./packages/_vue-icons_all\" --registry https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "",
