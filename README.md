@@ -1,4 +1,4 @@
-<img src="data:image/svg+xml;charset=utf-8,%3Csvg%20class%3D%22logo%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%2224%22%20height%3D%2224%22%20data-v-7b849662%3D%22%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%2342b883%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H0l64%2C110l64-110C128%2C10%2C78.8%2C10%2C78.8%2C10z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%2335495e%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H25.6L64%2C76l38.4-66H78.8z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E" width="120" alt="React Icons">
+<img src="data:image/svg+xml;charset=utf-8,%3Csvg%20class%3D%22logo%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%2224%22%20height%3D%2224%22%20data-v-7b849662%3D%22%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%2342b883%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H0l64%2C110l64-110C128%2C10%2C78.8%2C10%2C78.8%2C10z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%2335495e%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H25.6L64%2C76l38.4-66H78.8z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E" width="120" alt="vue3 Icons">
 
 # [Vue3 Icons](https://github.com/vue-icons/vue-icons)
 
@@ -71,7 +71,7 @@ You can configure vue3-icons props using [React Context API](https://reactjs.org
 _Requires **React 16.3** or higher._
 
 ```jsx
-import { IconContextProvider } from "vue-icons";
+import { IconContextProvider } from "vue3-icons";
 
 <IconContextProvider :value="{ color: 'blue', className: 'global-class-name' }">
   <div>
@@ -97,7 +97,7 @@ Import path has changed. You need to rewrite from the old style.
 
 ```jsx
 // OLD IMPORT STYLE
-import FaBeer from 'vue-icons/lib/fa/beer';
+import FaBeer from 'vue3-icons/lib/fa/beer';
 
 function Question() {
   return (
@@ -121,9 +121,7 @@ function Question() {
 }
 ```
 
-Ending up with a large JS bundle? Check out [this issue](https://github.com/vue3-icons/vue3-icons/issues/154).
-
-### Adjustment CSS
+<!-- ### Adjustment CSS
 
 From version 3, `vertical-align: middle` is not automatically given. Please use IconContext to specify className or specify an inline style.
 
@@ -147,7 +145,7 @@ CSS
 .vue3-icons {
   vertical-align: middle;
 }
-```
+``` -->
 
 ### TypeScript native support
 
@@ -180,7 +178,7 @@ yarn build
 
 ### Preview
 
-The preview site is the [`vue3-icons`](https://vue3-icons.github.io/vue3-icons) website, built in [NextJS](https://nextjs.org/).
+The preview site is the [`vue3-icons`](https://vue-icons.github.io/vue-icons/) website.
 
 ```bash
 cd packages/vue3-icons
@@ -196,7 +194,7 @@ yarn start
 The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `vue3-icons` added as a dependency for easy testing.
 
 ```bash
-cd packages/vue-icons
+cd packages/vue3-icons
 yarn fetch
 yarn build
 
@@ -207,10 +205,6 @@ yarn start
 ## Why React SVG components instead of fonts?
 
 SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `vue-icons`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
-
-## Related Projects
-
-- [react-svg-morph](https://github.com/gorangajic/react-svg-morph/)
 
 ## Licence
 
