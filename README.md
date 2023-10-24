@@ -1,67 +1,33 @@
-<img src="https://rawgit.com/gorangajic/react-icons/master/react-icons.svg" width="120" alt="React Icons">
+<img src="data:image/svg+xml;charset=utf-8,%3Csvg%20class%3D%22logo%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%2224%22%20height%3D%2224%22%20data-v-7b849662%3D%22%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%2342b883%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H0l64%2C110l64-110C128%2C10%2C78.8%2C10%2C78.8%2C10z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%2335495e%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H25.6L64%2C76l38.4-66H78.8z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E" width="120" alt="React Icons">
 
-# [React Icons](https://react-icons.github.io/react-icons)
+# [Vue3 Icons](https://github.com/vue-icons/vue-icons)
 
 [![npm][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/react-icons.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/react-icons
+[npm-image]: https://img.shields.io/npm/v/vue3-icons.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/vue3-icons
 
-Include popular icons in your React projects easily with `react-icons`, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+方案来自：[react-icons](https://react-icons.github.io/react-icons)
+
+Include popular icons in your Vue3 projects easily with `vue3-icons`, which utilizes ES6 imports that allows you to include only the icons that your project is using.
 
 ## Installation (for standard modern project)
 
 ```bash
-yarn add react-icons 
+pnpm add vue3-icons
 # or
-npm install react-icons --save
+npm install vue3-icons --save
 ```
 
 example usage
 
-```jsx
-import { FaBeer } from "react-icons/fa";
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
-
-[View the documentation](https://react-icons.github.io/react-icons) for further usage examples and how to use icons from other packages. _NOTE_: each Icon package has it's own subfolder under `react-icons` you import from.
-
-For example, to use an icon from **Material Design**, your import would be: `import { ICON_NAME } from 'react-icons/md';`
-
-## Installation (for meteorjs, gatsbyjs, etc)
-
-> **Note**
-> This option has not had a new release for some time.
-> More info https://github.com/react-icons/react-icons/issues/593
-
-If your project grows in size, this option is available.
-This method has the trade-off that it takes a long time to install the package.
-
-```bash
-yarn add @react-icons/all-files
-# or
-npm install @react-icons/all-files --save
-```
-
-example usage
-
-```jsx
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
+```vue
+<script lang="ts" setup>
+import { FaBeer } from 'vue-icons/fa';
+</script>
+<template>
+  <FaBeer />
+</template>
 ```
 
 ## Icons
@@ -100,14 +66,14 @@ You can add more icons by submitting pull requests or creating issues.
 
 ## Configuration
 
-You can configure react-icons props using [React Context API](https://reactjs.org/docs/context.html).
+You can configure vue3-icons props using [React Context API](https://reactjs.org/docs/context.html).
 
 _Requires **React 16.3** or higher._
 
 ```jsx
-import { IconContext } from "react-icons";
+import { IconContextProvider } from "vue-icons";
 
-<IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
+<IconContextProvider :value="{ color: 'blue', className: 'global-class-name' }">
   <div>
     <FaFolder />
   </div>
@@ -131,7 +97,7 @@ Import path has changed. You need to rewrite from the old style.
 
 ```jsx
 // OLD IMPORT STYLE
-import FaBeer from "react-icons/lib/fa/beer";
+import FaBeer from 'vue-icons/lib/fa/beer';
 
 function Question() {
   return (
@@ -144,7 +110,7 @@ function Question() {
 
 ```jsx
 // NEW IMPORT STYLE
-import { FaBeer } from "react-icons/fa";
+import { FaBeer } from 'vue3-icons/fa';
 
 function Question() {
   return (
@@ -155,7 +121,7 @@ function Question() {
 }
 ```
 
-Ending up with a large JS bundle? Check out [this issue](https://github.com/react-icons/react-icons/issues/154).
+Ending up with a large JS bundle? Check out [this issue](https://github.com/vue3-icons/vue3-icons/issues/154).
 
 ### Adjustment CSS
 
@@ -172,31 +138,31 @@ From version 3, `vertical-align: middle` is not automatically given. Please use 
 Component
 
 ```tsx
-<IconContext.Provider value={{ className: 'react-icons' }}>
+<IconContext.Provider value={{ className: 'vue3-icons' }}>
 ```
 
 CSS
 
 ```css
-.react-icons {
+.vue3-icons {
   vertical-align: middle;
 }
 ```
 
 ### TypeScript native support
 
-Dependencies on `@types/react-icons` can be deleted.
+Dependencies on `@types/vue3-icons` can be deleted.
 
 #### Yarn
 
 ```bash
-yarn remove @types/react-icons
+yarn remove @types/vue3-icons
 ```
 
 #### NPM
 
 ```bash
-npm remove @types/react-icons
+npm remove @types/vue3-icons
 ```
 
 ## Contributing
@@ -207,17 +173,17 @@ npm remove @types/react-icons
 
 ```bash
 yarn
-cd packages/react-icons
+cd packages/vue3-icons
 yarn fetch  # fetch icon sources
 yarn build
 ```
 
 ### Preview
 
-The preview site is the [`react-icons`](https://react-icons.github.io/react-icons) website, built in [NextJS](https://nextjs.org/).
+The preview site is the [`vue3-icons`](https://vue3-icons.github.io/vue3-icons) website, built in [NextJS](https://nextjs.org/).
 
 ```bash
-cd packages/react-icons
+cd packages/vue3-icons
 yarn fetch
 yarn build
 
@@ -227,10 +193,10 @@ yarn start
 
 ### Demo
 
-The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `react-icons` added as a dependency for easy testing.
+The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `vue3-icons` added as a dependency for easy testing.
 
 ```bash
-cd packages/react-icons
+cd packages/vue-icons
 yarn fetch
 yarn build
 
@@ -240,7 +206,7 @@ yarn start
 
 ## Why React SVG components instead of fonts?
 
-SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `react-icons`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
+SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `vue-icons`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
 
 ## Related Projects
 
