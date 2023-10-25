@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/vue-icons/vue-icons/compare/v0.1.11...v0.1.12) (2023-10-25)
+
+
+### Bug Fixes
+
+* 增加官网代码高亮 ([20fbddc](https://github.com/vue-icons/vue-icons/commit/20fbddcba6dd4a9a22b1821c2a595b70cb50d093))
+
 ### [0.1.11](https://github.com/vue-icons/vue-icons/compare/v0.1.10...v0.1.11) (2023-10-25)
 
 
