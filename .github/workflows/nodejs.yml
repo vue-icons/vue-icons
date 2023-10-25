@@ -6,6 +6,8 @@ on:
   push:
     tags:
       - '*'
+    branches:
+      - 'site-ui'
 
 # 任务
 jobs:
@@ -62,7 +64,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./packages/vue3-demo/dist
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/site-ui'
       - name: publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -75,3 +77,4 @@ jobs:
           artifacts: 'packages/_vue-icons_*/*.tgz'
           bodyFile: 'packages/vue-icons/VERSIONS'
           prerelease: false
+        if: github.ref != 'refs/heads/site-ui'
