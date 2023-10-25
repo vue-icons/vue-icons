@@ -4,8 +4,8 @@ name: Deploy & Release
 # 触发时机
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 # 任务
 jobs:
@@ -69,8 +69,9 @@ jobs:
         run: pnpm pub
       - name: Release
         uses: ncipollo/release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           artifacts: 'packages/_vue-icons_*/*.tgz'
           bodyFile: 'packages/vue-icons/VERSIONS'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # prerelease: ${{ contains(github.ref, 'snapshot') }}
+          prerelease: false
