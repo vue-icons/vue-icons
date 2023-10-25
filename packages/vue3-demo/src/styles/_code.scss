@@ -1,0 +1,42 @@
+.code-wrap {
+  position: relative;
+  background-color: #000;
+  overflow-x: auto;
+  transition: background-color 0.5s;
+  pre,
+  code {
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  pre {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding-bottom: 20px;
+    background: transparent;
+    overflow-x: auto;
+    width: 100%;
+  }
+  code {
+    display: block;
+    padding: 10px 24px 0;
+    width: fit-content;
+    min-width: 100%;
+    line-height: 1.7;
+    font-size: 16px;
+    color: rgba(255, 255, 245, 0.86);
+    transition: color 0.5s;
+    box-sizing: border-box;
+  }
+}
