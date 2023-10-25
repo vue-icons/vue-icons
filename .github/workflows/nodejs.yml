@@ -73,4 +73,4 @@ jobs:
           artifacts: 'packages/_vue-icons_*/*.tgz'
           bodyFile: 'packages/vue-icons/VERSIONS'
           token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: ${{ contains(github.ref, 'snapshot') }}
+          # prerelease: ${{ contains(github.ref, 'snapshot') }}
