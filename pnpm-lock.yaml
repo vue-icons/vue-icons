@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -38,6 +42,9 @@ importers:
         specifier: ^3.2.47
         version: 3.2.47
     devDependencies:
+      '@primer/octicons':
+        specifier: ^19.8.0
+        version: 19.8.0
       camelcase:
         specifier: ^7.0.1
         version: 7.0.1
@@ -59,9 +66,9 @@ importers:
       ionicons-5:
         specifier: npm:ionicons@5
         version: /ionicons@5.0.0
-      octicons:
-        specifier: ^8.5.0
-        version: 8.5.0
+      lucide-static:
+        specifier: ^0.288.0
+        version: 0.288.0
       p-queue:
         specifier: ^7.3.4
         version: 7.3.4
@@ -1029,6 +1036,12 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: true
+
+  /@primer/octicons@19.8.0:
+    resolution: {integrity: sha512-Imze/fyW41Io5fN+27T5EAeXJrgBjMbz6nzU+wYbRylXvIAjLPUvaJPVoStiFlgSU+TjTUJqg5A9rgMDzTyMCg==}
+    dependencies:
+      object-assign: 4.1.1
     dev: true
 
   /@rushstack/eslint-patch@1.2.0:
@@ -4005,6 +4018,10 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /lucide-static@0.288.0:
+    resolution: {integrity: sha512-Sv+COmIThH0ImVbTAUfO2+77O9C1AZFXhIraCXPfvUXYGv7BG8ihxr4oGCQuDBRyxej4xJiD+4kK7qzbLygwoA==}
+    dev: true
+
   /magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
@@ -4329,13 +4346,6 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.2.0
       es-abstract: 1.21.2
-    dev: true
-
-  /octicons@8.5.0:
-    resolution: {integrity: sha512-l4GCHwBvStuwVfIuqUx/ktFJQJdCqLnd0bi2dvYZzkza6wj9EUksfMUlTqyVMULbPIvRTXxOqn/W07fsMu1bXA==}
-    deprecated: octicons has been renamed to @primer/octicons
-    dependencies:
-      object-assign: 4.1.1
     dev: true
 
   /ohash@1.1.2:

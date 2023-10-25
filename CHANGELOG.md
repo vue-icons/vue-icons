@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/vue-icons/vue-icons/compare/v0.1.3...v0.1.4) (2023-10-25)
+
+
+### Bug Fixes
+
+* style ([351234c](https://github.com/vue-icons/vue-icons/commit/351234ca10b30cc017e6f0262ebc21cebe674174))
+
 ### [0.0.1](https://github.com/vue-icons/vue-icons/compare/v0.1.2...v0.0.1) (2023-10-24)
 
 ### [0.0.1](https://github.com/vue-icons/vue-icons/compare/v0.1.2...v0.0.1) (2023-10-24)

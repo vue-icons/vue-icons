@@ -1,4 +1,4 @@
-<img src="data:image/svg+xml;charset=utf-8,%3Csvg%20class%3D%22logo%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%2224%22%20height%3D%2224%22%20data-v-7b849662%3D%22%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%2342b883%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H0l64%2C110l64-110C128%2C10%2C78.8%2C10%2C78.8%2C10z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%2335495e%22%20d%3D%22M78.8%2C10L64%2C35.4L49.2%2C10H25.6L64%2C76l38.4-66H78.8z%22%20data-v-7b849662%3D%22%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E" width="120" alt="vue3 Icons">
+<svg class="logo" viewBox="0 0 128 128" width="24" height="24" data-v-c0161dce=""><path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-c0161dce=""></path><path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-c0161dce=""></path></svg>
 
 # [Vue3 Icons](https://github.com/vue-icons/vue-icons)
 
@@ -66,9 +66,7 @@ You can add more icons by submitting pull requests or creating issues.
 
 ## Configuration
 
-You can configure vue3-icons props using [React Context API](https://reactjs.org/docs/context.html).
-
-_Requires **React 16.3** or higher._
+You can configure vue3-icons props using [vue3 Provider API](https://cn.vuejs.org/api/application.html#app-provide).
 
 ```jsx
 import { IconContextProvider } from "vue3-icons";
@@ -88,38 +86,6 @@ import { IconContextProvider } from "vue3-icons";
 | `style`     | `undefined`           | Can overwrite size and color       |
 | `attr`      | `undefined`           | Overwritten by other attributes    |
 | `title`     | `undefined`           | Icon description for accessibility |
-
-## Migrating from version 2 -> 3
-
-### Change import style
-
-Import path has changed. You need to rewrite from the old style.
-
-```jsx
-// OLD IMPORT STYLE
-import FaBeer from 'vue3-icons/lib/fa/beer';
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
-
-```jsx
-// NEW IMPORT STYLE
-import { FaBeer } from 'vue3-icons/fa';
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
 
 <!-- ### Adjustment CSS
 
@@ -146,22 +112,6 @@ CSS
   vertical-align: middle;
 }
 ``` -->
-
-### TypeScript native support
-
-Dependencies on `@types/vue3-icons` can be deleted.
-
-#### Yarn
-
-```bash
-yarn remove @types/vue3-icons
-```
-
-#### NPM
-
-```bash
-npm remove @types/vue3-icons
-```
 
 ## Contributing
 
@@ -191,7 +141,7 @@ yarn start
 
 ### Demo
 
-The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `vue3-icons` added as a dependency for easy testing.
+The demo is a vue3 boilerplate with `vue3-icons` added as a dependency for easy testing.
 
 ```bash
 cd packages/vue3-icons
@@ -202,7 +152,7 @@ cd ../demo
 yarn start
 ```
 
-## Why React SVG components instead of fonts?
+## Why Vue3 SVG components instead of fonts?
 
 SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `vue-icons`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
 

@@ -30,8 +30,9 @@ async function main() {
     recursive: true,
   });
 
-  const queue = new PQueue({ concurrency: 10 });
+  const queue = new PQueue({ concurrency: 1, interval: 1000  });
   for (const icon of icons) {
+    console.log('🚀 ~ file: fetcher.ts:35 ~ main ~ icon:', icon, !icon.source)
     if (!icon.source) {
       continue;
     }
