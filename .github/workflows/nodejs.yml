@@ -52,26 +52,25 @@ jobs:
       #    commit: '[ci] release'
       #    title: '[ci] release'
       #  env:
-          # 这里需要几个 Token 变量
-          # GITHUB_TOKEN 是 CI 里自带的默认 token
+      # 这里需要几个 Token 变量
+      # GITHUB_TOKEN 是 CI 里自带的默认 token
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN 需要稍后在 npm 网站生成。
-      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
+      # NPM_TOKEN 需要稍后在 npm 网站生成。
+      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./packages/vue3-demo/dist
         if: github.ref == 'refs/heads/main'
-      - name: publish 
+      - name: publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} 
-        run: pnpm pubnpm
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: pnpm pub
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "packages/_vue-icons_*/*.tgz"
-          bodyFile: "packages/vue-icons/VERSIONS"
+          artifacts: 'packages/_vue-icons_*/*.tgz'
+          bodyFile: 'packages/vue-icons/VERSIONS'
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ contains(github.ref, 'snapshot') }}
-
