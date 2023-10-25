@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/vue-icons/vue-icons/compare/v0.1.10...v0.1.11) (2023-10-25)
+
+
+### Bug Fixes
+
+* 修复provider配置不生效的问题 ([bbc8bbd](https://github.com/vue-icons/vue-icons/commit/bbc8bbd22e2c76c2b45d4fc6b5ce2efb420332a3))
+
 ### [0.1.10](https://github.com/vue-icons/vue-icons/compare/v0.1.9...v0.1.10) (2023-10-25)
 
 
