@@ -26,7 +26,7 @@ const Icon = defineComponent({
     }
 
     return () => (
-      <div class="item" tabIndex={0} onClick={copyToClipboard} key={props.name}>
+      <div class="item" tab-index="0" onClick={copyToClipboard} key={props.name}>
         <div class="icon h2">{typeof props.icon === 'function' && props.icon?.()}</div>
         <div class="name">{highlightedName()}</div>
       </div>

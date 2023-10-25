@@ -8,7 +8,7 @@ import { defineComponent, ref } from 'vue'
 
 import { getHighlighter, setCDN, loadTheme } from 'shiki'
 
-setCDN('/node_modules/shiki')
+setCDN('./')
 
 export const CodeBlock = defineComponent({
   name: 'CodeBlock',

@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "build": "pnpm --filter \"./packages/vue-icons\" run build",
-    "dev": "pnpm run build && pnpm --filter \"./packages/vue3-demo\" run dev",
+    "dev": "pnpm --filter \"./packages/vue3-demo\" run dev",
+    "dev:new": "pnpm run build && pnpm --filter \"./packages/vue3-demo\" run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release:bump": "bumpp patch package.json packages/_vue-icons_all/package.json packages/vue-icons/package.json packages/vue3-demo/package.json  packages/_vue-icons_all/-files/package.json --execute=\"pnpm standard-version --skip.bump --skip.commit --skip.tag --y && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
     "pub": "pnpm publish --no-git-checks --access public --filter \"./packages/_vue-icons_all\" --registry https://registry.npmjs.org/",

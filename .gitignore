@@ -3,4 +3,5 @@ packages/vue-icons/icons*
 packages/_vue-icons_all
 packages/_vue-icons_all-files
 dist
+!packages/vue3-demo/public/dist
 packages/**/dist/*
