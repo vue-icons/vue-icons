@@ -11,6 +11,15 @@
     "strict": true,
     "noImplicitAny": true
   },
-  "include": ["src/**/*.tsx", "src/index.ts", "src/index.ts", "src/iconContext.ts", "src/iconContext.ts", "src/iconBase.ts", "src/iconBase.ts"],
+  "include": [
+    "src/**/*.tsx",
+    "src/index.ts",
+    "src/index.ts",
+    "src/iconContext.ts",
+    "src/iconContext.ts",
+    "src/iconBase.ts",
+    "src/iconBase.ts",
+    "src/iconContextProvider.ts"
+  ],
   "exclude": ["icons"]
 }

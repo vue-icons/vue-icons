@@ -15,7 +15,7 @@ export const IconPlugin = (): Plugin => {
         let codes = `
         export const getIcons = (id) => {
           switch (id) {`
-            
+
           IconsManifest.forEach(icon => {
             codes += `
             case "${icon.id}":

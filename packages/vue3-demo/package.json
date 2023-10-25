@@ -19,6 +19,7 @@
     "pinia": "^2.0.32",
     "preval.macro": "^5.0.0",
     "prismjs": "^1.29.0",
+    "shiki": "^0.14.5",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vue3-icons": "workspace:*",

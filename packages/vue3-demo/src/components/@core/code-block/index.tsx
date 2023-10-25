@@ -4,7 +4,11 @@ import 'vue3-toastify/dist/index.css'
 
 // import { HiOutlineClipboard } from 'vue3-icons/hi'
 
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+
+import { getHighlighter, setCDN, loadTheme } from 'shiki'
+
+setCDN('/node_modules/shiki')
 
 export const CodeBlock = defineComponent({
   name: 'CodeBlock',
@@ -18,10 +22,25 @@ export const CodeBlock = defineComponent({
       toast.success(`Copied to clipboard`)
     }
 
+    const output = ref('')
+
+    getHighlighter({
+      theme: 'one-dark-pro'
+    })
+      .then((highlighter) => {
+        const code: string = `const greet:string = "hello world!";
+console.log(greet);`
+        output.value = highlighter.codeToHtml(code, { lang: 'ts' })
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+
     return () => (
-      <pre>
-        <code>{props.code!.trim()}</code>
-      </pre>
+      <div class="code-wrap" innerHTML={output.value}></div>
+      // <pre>
+      //   <code>{props.code!.trim()}</code>
+      // </pre>
     )
   }
 })
