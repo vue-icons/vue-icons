@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite'
-import { IconsManifest } from 'vue3-icons/lib/cjs'
+import { IconsManifest } from '../../_vue-icons_all/lib/esm/iconsManifest'
 export const IconPlugin = (): Plugin => {
   const virtualModuleId = 'virtual:icons'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
