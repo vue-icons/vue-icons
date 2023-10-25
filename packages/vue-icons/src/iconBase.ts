@@ -1,6 +1,6 @@
 
-import { SVGAttributes, defineComponent, h } from "vue";
-import { DefaultContext } from "./iconContext";
+import { SVGAttributes, defineComponent, h, inject } from "vue";
+import { DefaultContext, IconContextKey } from "./iconContext";
 
 export interface IconTree {
   tag: string;
@@ -45,7 +45,7 @@ export const IconBase = defineComponent<IconBaseProps & { attr?: Record<string, 
       if (conf.className) className = conf.className;
       if (props.class)
         className = (className ? className + " " : "") + props.class;
-  
+
       console.log(attr, 'props.attr')
       return h('svg', {
         // @ts-ignore
@@ -70,6 +70,7 @@ export const IconBase = defineComponent<IconBaseProps & { attr?: Record<string, 
       ])
     };
 
-    return () => h(elem(DefaultContext));
+    const iconConfig = inject(IconContextKey, DefaultContext)
+    return () => h(elem(iconConfig));
   }
 })
