@@ -175,8 +175,10 @@ export async function writePackageJson(override, { DIST, LIB, rootDir }) {
 }
 
 export async function copyReadme({ DIST, LIB, rootDir }) {
+  const rootReadMe = path.resolve(rootDir, "../../README.md")
+  console.log('README PATH', rootReadMe)
   await fs.copyFile(
-    path.resolve(rootDir, "../../README.md"),
+    rootReadMe,
     path.resolve(DIST, "README.md")
   );
 }
