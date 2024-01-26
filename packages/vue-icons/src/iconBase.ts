@@ -46,7 +46,6 @@ export const IconBase = defineComponent<IconBaseProps & { attr?: Record<string, 
       if (props.class)
         className = (className ? className + " " : "") + props.class;
 
-      console.log(attr, 'props.attr')
       return h('svg', {
         // @ts-ignore
         stroke: "currentColor",
