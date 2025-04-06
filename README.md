@@ -23,7 +23,7 @@ example usage
 
 ```vue
 <script lang="ts" setup>
-import { FaBeer } from 'vue-icons/fa';
+import { FaBeer } from 'vue3-icons/fa';
 </script>
 <template>
   <FaBeer />
